@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="flex-container">
         {/* calling CountryList Component Here */}
-       <CountryList data = {tenHighestPopulation} />
+       {/* <CountryList data = {tenHighestPopulation} /> */}
        <div className='mt-4 container'>
         <CountryFlag countriesList = {countriesData} />
        </div>

@@ -7,13 +7,11 @@ const CountryCard = ({flag, name, capital, population, currency, languages}) => 
     return (
         <div className="card shadow">
         <div className="card-body ms-5">
-            <img  className="card-img-top rounded-circle border-2" id="img" onError={handleImageError} src={flag} alt="..." width={20} height={20}></img> 
+            <img  className="card-img-top border-2" id="img" onError={handleImageError} src={flag} alt="..." width={20} height={20}></img> 
+            <p className="fs-3">{name}</p>
+          
             <table className="table">
                 <tbody>
-                    <tr>
-                    <th scope="row">Name</th>
-                    <td id="name">{name}</td>
-                    </tr>
                     <tr>
                     <th scope="row">Capital</th>
                     <td id="capital">{capital}</td>
