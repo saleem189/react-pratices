@@ -5,10 +5,12 @@ const CountryCard = ({flag, name, capital, population, currency, languages}) => 
       };
 
     return (
-        <div className="card shadow">
+        <div className="card shadow ">
         <div className="card-body ms-5">
-            <img  className="card-img-top border-2" id="img" onError={handleImageError} src={flag} alt="..." width={20} height={20}></img> 
-            <p className="fs-3">{name}</p>
+            <div className="text-center">
+             <img  className="border-2" id="img" onError={handleImageError} src={flag} alt="..." width={200} height={200}></img> 
+            </div>
+            <p className="fs-3 fw-semibold">{name}</p>
           
             <table className="table">
                 <tbody>
