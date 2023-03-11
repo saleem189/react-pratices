@@ -28,7 +28,7 @@ const CountryCard = ({flag, name, capital, population, currency, languages}) => 
                     </tr>
                     <tr>
                     <th scope="row">Languages</th>
-                    <td id="language">{languages}</td>
+                    <td id="language">{(languages.length > 1) ? languages.join(", ") : languages}</td>
                     </tr>
                 </tbody>
             </table>

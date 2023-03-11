@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
+import { MdFileCopy } from "react-icons/md";
 import { useState } from "react";
 import { numbers, upperCaseLetters, lowerCaseLetters, specialCharacters } from "../Scripts/characters_lists.js";
 
@@ -55,20 +58,26 @@ const PasswordGenerator = (props) => {
                     <div className="row">
                         <div className="col-8">
                             <div className="input-group">
-                                <input type="text" className="form-control" placeholder="Password" aria-label="Password" defaultValue={desirePassword} aria-describedby="addon-wrapping"/>
+                                <input type="text" className="form-control" placeholder="Random generated password will show here" aria-label="Password" defaultValue={desirePassword} aria-describedby="addon-wrapping"/>
                             </div>
                         </div>
                         <div className="col-2">
                         <button className="btn btn-success" onClick={(e)=>{
-                            setButton(true)
-                            e.target.classList.remove('btn-success')
-                            e.target.classList.add('btn-info')
-                            setTimeout(()=>{
-                                setButton(false)
-                                e.target.classList.remove('btn-info')
-                                e.target.classList.add('btn-success')
-                            },3000)
-                            }}>{ (button) ? 'Copied' : 'Copy' } </button>
+                            if (desirePassword.length > 0) {  //! this condition is checking when password is generated then change the button state
+                                setButton(true)
+                                // e.target.classList.remove('btn-success')
+                                // e.target.classList.add('btn-info')
+                                navigator.clipboard.writeText(desirePassword) //! this code is coping text to clipboard
+                                setTimeout(()=>{
+                                    setButton(false)
+                                    // e.target.classList.remove('btn-info')
+                                    // e.target.classList.add('btn-success')
+                                },1000)
+                                }else{
+                                    alert('cannot copy because you have not yet created password and Password Filed is empty');
+                                }
+                            }
+                            }>{ (button) ? <MdFileCopy/> : 'Copy' } </button>
                         </div>
                     </div>
                     <div className="row mt-2">
@@ -105,7 +114,6 @@ const PasswordGenerator = (props) => {
                 </div>
                 <div className="text-center">
                 <button className="btn btn-success" onClick={generatePassword}>Generate Password</button>
-
                 </div>
             </div>
         </div>
