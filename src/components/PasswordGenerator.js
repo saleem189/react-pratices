@@ -14,6 +14,7 @@ const PasswordGenerator = (props) => {
     const [uppercase, setUppercase] = useState(false);
     const [lowercase, setLowercase] = useState(false);
     const [button , setButton] = useState(false);
+    const [textCoped, setTextCopied] = useState("");
 
     //? making string and concatining all elements according to checked values
     const generatePassword=() => {
@@ -37,11 +38,10 @@ const PasswordGenerator = (props) => {
     const createPass=(password_string)=>{
         let random_pass="";
         for(let i=0;i < passwordLength;i++){
-           const randomvalue= Math.floor(Math.random() * password_string.length)
-           random_pass =random_pass + password_string.charAt(randomvalue)
-       
+           const randomvalue= Math.floor(Math.random() * password_string.length);
+           random_pass = random_pass + password_string.charAt(randomvalue);
         }
-        return random_pass
+        return random_pass;
        
         }
     
@@ -61,15 +61,17 @@ const PasswordGenerator = (props) => {
                                 <input type="text" className="form-control" placeholder="Random generated password will show here" aria-label="Password" defaultValue={desirePassword} aria-describedby="addon-wrapping"/>
                             </div>
                         </div>
-                        <div className="col-2">
+                        <div className="col-4">
                         <button className="btn btn-success" onClick={(e)=>{
                             if (desirePassword.length > 0) {  //! this condition is checking when password is generated then change the button state
                                 setButton(true)
+                                setTextCopied('Text copied to clipboard')
                                 // e.target.classList.remove('btn-success')
                                 // e.target.classList.add('btn-info')
                                 navigator.clipboard.writeText(desirePassword) //! this code is coping text to clipboard
                                 setTimeout(()=>{
                                     setButton(false)
+                                    setTextCopied("")
                                     // e.target.classList.remove('btn-info')
                                     // e.target.classList.add('btn-success')
                                 },1000)
@@ -77,7 +79,7 @@ const PasswordGenerator = (props) => {
                                     alert('cannot copy because you have not yet created password and Password Filed is empty');
                                 }
                             }
-                            }>{ (button) ? <MdFileCopy/> : 'Copy' } </button>
+                            }>{ (button) ? <MdFileCopy/> : 'Copy' } </button>  <span className="text-success"> {textCoped}</span>
                         </div>
                     </div>
                     <div className="row mt-2">
