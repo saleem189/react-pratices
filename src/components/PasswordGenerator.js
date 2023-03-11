@@ -42,8 +42,7 @@ const PasswordGenerator = (props) => {
            random_pass = random_pass + password_string.charAt(randomvalue);
         }
         return random_pass;
-       
-        }
+    }
     
         
 
