@@ -13,9 +13,8 @@ function App() {
        <div className='mt-4 container'>
         <CountryFlag countriesList = {countriesData} />
        </div>
-       <PasswordGenerator />
        <div className='mt-4 container'>
-        <CountryFlag countriesList = {countriesData} />
+       <PasswordGenerator />
        </div>
     </div>
   );
