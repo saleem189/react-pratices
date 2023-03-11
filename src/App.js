@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import {tenHighestPopulation} from "./Scripts/ten_most_highest_populations.js";
+import {countriesData} from "./Scripts/countries.js";
+import CountryList from "./components/CountryList.js";
+import CountryFlag from "./components/CountryFlag";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex-container">
+        {/* calling CountryList Component Here */}
+       <CountryList data = {tenHighestPopulation} />
+       <div className='mt-4 container'>
+        <CountryFlag countriesList = {countriesData} />
+       </div>
     </div>
   );
 }
