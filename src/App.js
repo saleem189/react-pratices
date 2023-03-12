@@ -26,7 +26,7 @@ export default App;
 /**
  * ! this is an example how to pass states from parent to child components and child can access of parent states
  * ! and change parent states within child component
- * 
+ * ! this is also called component Drilling
  * */ 
 
 
