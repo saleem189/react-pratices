@@ -1,11 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { MdFileCopy } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { numbers, upperCaseLetters, lowerCaseLetters, specialCharacters } from "../Scripts/characters_lists.js";
 
 const PasswordGenerator = (props) => {
 
+    // useEffect(() => {
+    //     console.log('use effect called');
+    //   }); //*this line will exectue when ever component is refreshed or rerenderd
+
+    
     // * defining states here
     const [passwordLength , setPasswordLength] = useState(8);
     const [desirePassword, setDesirePassword] = useState("");
@@ -16,6 +21,10 @@ const PasswordGenerator = (props) => {
     const [button , setButton] = useState(false);
     const [textCoped, setTextCopied] = useState("");
 
+    useEffect(() => {
+      console.log('use effect called');
+    },[lowercase]); //* this line will only called one time when component is refreshed or rerenderd and it will rerender when if their is any change in lowercase state
+    
     //? making string and concatining all elements according to checked values
     const generatePassword=() => {
         let password_string = '';

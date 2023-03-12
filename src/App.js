@@ -4,6 +4,8 @@ import {countriesData} from "./Scripts/countries.js";
 import CountryList from "./components/CountryList.js";
 import CountryFlag from "./components/CountryFlag";
 import PasswordGenerator from './components/PasswordGenerator';
+import AxiosUseEffect from './components/useEffect_axios.js';
+import Events from './components/Events';
 
 function App() {
   return (
@@ -16,6 +18,13 @@ function App() {
        <div className='mt-4 container'>
        <PasswordGenerator />
        </div>
+
+       <AxiosUseEffect/>
+
+
+       <div className="mt-5 mb-5">
+        <Events/>
+       </div>
     </div>
   );
 }
@@ -24,9 +33,10 @@ export default App;
 
 
 /**
- * ! this is an example how to pass states from parent to child components and child can access of parent states
+ * ! this is an example how to pass states from parent to child components and child can have access of parent states
  * ! and change parent states within child component
  * ! this is also called component Drilling
+ * !states are always sent form parent to child
  * */ 
 
 
