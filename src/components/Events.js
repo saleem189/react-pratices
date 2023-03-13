@@ -44,12 +44,12 @@ const Events = () =>{
             {state.message}
         </p>
         <div className="btn-group gap-3">
-            <button onClick={handleClickHandler}>click me</button>
-            <button onMouseMove={handleMouseMove}>Movie Mouse here</button>
-            <input type="text" name="first_name" onKeyUp={handleKeyPress}></input>
-            <input type="checkbox" name="check" onChange={handleCheckBox}></input>
+            <button className="btn btn-success" onClick={handleClickHandler}>click me</button>
+            <button className="btn btn-success" onMouseMove={handleMouseMove}>Movie Mouse here</button>
+            <input className="" type="text" name="first_name" onKeyUp={handleKeyPress}></input>
+            <input className="form-check-input" type="checkbox" name="check" onChange={handleCheckBox}></input>
             <form onSubmit={handleSubmit}>
-                <button type="submit">submit</button>
+                <button className="btn btn-success" type="submit">submit</button>
             </form>
         </div>
     </div>

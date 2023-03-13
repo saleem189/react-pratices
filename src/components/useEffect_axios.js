@@ -38,7 +38,7 @@ const AxiosUseEffect = () => {
           </div>
         ))}
 
-        <button onClick={handlerButton} > generate again</button>
+        <button className="btn btn-success" onClick={handlerButton} > generate again</button>
       </div>
     );
     

@@ -29,7 +29,7 @@ const MouseGrid = () => {
                 <label htmlFor="row">
                     Enter lenth of Rows
                 </label>
-                <input defaultValue={rowlength} type="number" name="row" onChange={(e)=>{setRowLength(e.target.value)}}></input>
+                <input className="form-control-sm" defaultValue={rowlength} type="number" name="row" onChange={(e)=>{setRowLength(e.target.value)}}></input>
             </div>
             <div className="form-group">
             <label htmlFor="column">
@@ -38,7 +38,7 @@ const MouseGrid = () => {
                 <input defaultValue={columnlength} type="number" name="column" onChange={(e)=>{setColumnLength(e.target.value)}}></input>
             </div>
 
-            <button onClick={handleGrid}> generate Grid</button>
+            <button className="btn btn-success mt-1" onClick={handleGrid}> generate Grid</button>
             <div className="flex-container bg-light">
                 <div className="text-center">
                     {divState}
