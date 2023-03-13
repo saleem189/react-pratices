@@ -19,12 +19,18 @@ const Events = () =>{
     }
 
     const handleKeyPress =(e) =>{
-        setState({...state,"message":`${e.target.value} Pressed a key`});
+        setState({...state,"first Name": e.target.value,"message":`${e.target.value} Pressed a key`});
         setColor ({'color':generateRandomColor()}); 
     }
 
     const handleCheckBox =(e) =>{
         setState({...state,"message":`OnChange is occured on Checkbox and it is now ${e.target.checked} `});
+        setColor ({'color':generateRandomColor()}); 
+    }
+
+    const handleSubmit =(e) =>{
+        e.preventDefault();
+        setState({...state,"message":`onSubmit it is preventing from submit it `});
         setColor ({'color':generateRandomColor()}); 
     }
     
@@ -42,6 +48,9 @@ const Events = () =>{
             <button onMouseMove={handleMouseMove}>Movie Mouse here</button>
             <input type="text" name="first_name" onKeyUp={handleKeyPress}></input>
             <input type="checkbox" name="check" onChange={handleCheckBox}></input>
+            <form onSubmit={handleSubmit}>
+                <button type="submit">submit</button>
+            </form>
         </div>
     </div>
 );

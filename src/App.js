@@ -6,6 +6,7 @@ import CountryFlag from "./components/CountryFlag";
 import PasswordGenerator from './components/PasswordGenerator';
 import AxiosUseEffect from './components/useEffect_axios.js';
 import Events from './components/Events';
+import MouseGrid from './components/MouseGrid';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
 
        <div className="mt-5 mb-5">
         <Events/>
+       </div>
+       <div className="mt-5 mb-5">
+        <MouseGrid/>
        </div>
     </div>
   );
