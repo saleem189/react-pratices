@@ -23,7 +23,7 @@ function App() {
       <hr className='mt-2'></hr>
       <div className='container'>
         <div className='text-center'>
-          <h3>Api Calling and first time data is fetched by using useEffect() Hook</h3>
+          <h3>Api Calling using AXIOS and first time data is fetched by using useEffect() Hook</h3>
             <AxiosUseEffect/>
         </div>
       </div>
