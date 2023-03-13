@@ -16,8 +16,11 @@ const MouseGrid = () => {
                 show_column_div.push(<div className="col" key={col_key++} > <GridBox/></div>);
             }
            show_row_div.push(<div className="row mt-1" key={'row_'+index}>{show_column_div}</div>);
-           show_column_div=[]; //initilizing again empty array because columns are sent to rows if we do not initilize it empty then new columns will be push along with the previous data in array. 
-                            //which will cause inappropiate result. and we will get maximum rows and columns which we define in inputs.. more rows/columns > which are actually defined
+           show_column_div=[]; 
+           /**
+            * initilizing again empty array because columns are sent to rows if we do not initilize it empty then new columns will be push along with the previous data in array.
+            * which will cause inappropiate result. and we will get maximum rows and columns which we define in inputs.. more rows/columns > which are actually defined
+            */
                              
         }
         setDivState(show_row_div); 
