@@ -16,20 +16,37 @@ function App() {
        <div className='mt-4 container'>
         <CountryFlag countriesList = {countriesData} />
        </div>
+      <hr className='mt-2'></hr>
        <div className='mt-4 container'>
        <PasswordGenerator />
        </div>
+      <hr className='mt-2'></hr>
+      <div className='container'>
+        <div className='text-center'>
+          <h3>Api Calling and first time data is fetched by using useEffect() Hook</h3>
+            <AxiosUseEffect/>
+        </div>
+      </div>
 
-       <AxiosUseEffect/>
-
-
-       <div className="mt-5 mb-5">
-        <Events/>
-       </div>
-       <div className="mt-5 mb-5">
-        <MouseGrid/>
-       </div>
-    </div>
+      <hr className='mt-2'></hr>
+      <div className='container'>
+        <div className='text-center'>
+          <h6>Events and their output</h6>
+            <div className="mt-2">
+              <Events/>
+            </div>
+        </div>
+        </div>
+        <hr className='mt-2'></hr>
+      <div className='flex-container'>
+        <div className='text-center'>
+          <h6>Mouse Grid</h6>
+            <div className="mt-5">
+              <MouseGrid/>
+            </div>
+        </div>
+        </div>
+  </div>
   );
 }
 

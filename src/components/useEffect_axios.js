@@ -5,9 +5,9 @@ const AxiosUseEffect = () => {
     const [apiData, setApiData] = useState([]);
 
     useEffect(() => {
-        console.log('use effect called in api');
-        console.table(apiData);
-    }, [apiData])
+        // console.table(apiData);
+        handlerButton()
+    }, [])
 
     const handlerButton = () =>{
         axios.get('https://jsonplaceholder.typicode.com/posts/',{
@@ -30,10 +30,10 @@ const AxiosUseEffect = () => {
 
     return (
 
-        <div className="container">
+        <div className="container mt-2">
         {apiData.map((item) => (
           <div key={item.id}>
-            <h1>{item.title}</h1>
+            <h3>{item.title}</h3>
             <p>{item.body}</p>
           </div>
         ))}

@@ -3,7 +3,7 @@ const GridBox = () =>{
         'width':'10rem',
         'height':'5rem',
         'border':'1px solid',
-        'backgroundColor':'gray'
+        'backgroundColor':'#f8f9fa'
     }
     const handleBox =(e)=>{
         e.target.style.backgroundColor = 'red';
