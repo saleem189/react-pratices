@@ -7,13 +7,14 @@ import PasswordGenerator from './components/PasswordGenerator';
 import AxiosUseEffect from './components/useEffect_axios.js';
 import Events from './components/Events';
 import MouseGrid from './components/MouseGrid';
+import DivPostionOnMouseMove from './components/DivPostionOnMouseMove';
 
 function App() {
   return (
     <div className="flex-container">
         {/* calling CountryList Component Here */}
        {/* <CountryList data = {tenHighestPopulation} /> */}
-       <div className='mt-4 container'>
+       {/* <div className='mt-4 container'>
         <CountryFlag countriesList = {countriesData} />
        </div>
       <hr className='mt-2'></hr>
@@ -45,7 +46,18 @@ function App() {
               <MouseGrid/>
             </div>
         </div>
+      </div> */}
+      <hr className='mt-2'></hr>
+      {/* <div className='flex-container mt-3'>
+      <div className='flex-container'> */}
+        <div className='text-center'>
+          <h6>Div Position</h6>
+            {/* <div className="mt-5"> */}
+              <DivPostionOnMouseMove/>
+            {/* </div> */}
         </div>
+      {/* </div>
+      </div> */}
   </div>
   );
 }
